@@ -8,11 +8,11 @@ class Live(TimeStampedModel):
     title = models.TextField('título')
     guest = models.ForeignKey(
         User,
-        related_name='guests',
+        related_name='guests',    # indispensavel para trabalhar com as queries
         verbose_name='convidados',
         on_delete=models.CASCADE,
-        null=True,
-        blank=True
+        null=True,       # o campo pode ser vazio           => Tem a ver com o BD
+        blank=True       # o campo pode não ser preenchido  => tem a com o formulario do Django
     )
     like = models.PositiveIntegerField('gostou', null=True, blank=True)
     unlike = models.PositiveIntegerField('não gostou', null=True, blank=True)

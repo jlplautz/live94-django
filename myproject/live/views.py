@@ -19,8 +19,10 @@ def live_detail(request, pk):
 
 
 def live_add(request):
+    form = LiveForm
+    context = {'form': form}
     template_name = 'live/live_form.html'
-    return render(request, template_name)
+    return render(request, template_name, context)
 
 
 class LiveCreate(CreateView):
