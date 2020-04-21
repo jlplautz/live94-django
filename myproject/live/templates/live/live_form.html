@@ -6,7 +6,7 @@
 
 <form action="" method="POST">
   {% csrf_token %}
-  {{ form.as_p }}
+  {{ form.as_p }}  # pode ser as_p ou as_table ou as_ul
   <button class="btn btn-primary" type="submit">Salvar</button>
 </form>
 
